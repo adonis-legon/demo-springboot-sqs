@@ -1,0 +1,15 @@
+version: '3'
+services:
+  demo-springboot-sqs:
+    image: demo-springboot-sqs:${IMAGE_TAG}
+    ports:
+      - "9090:9090"
+    environment:
+      QUEUE_URL: ${QUEUE_URL}
+      QUEUE_BATCH_SIZE: ${QUEUE_BATCH_SIZE}
+      QUEUE_WAIT_TIME: ${QUEUE_WAIT_TIME}
+      QUEUE_ERROR_BACKOFF_TIME: ${QUEUE_ERROR_BACKOFF_TIME}
+      QUEUE_BATCH_CONCURRENCY: ${QUEUE_BATCH_CONCURRENCY}
+      AWS_REGION: ${AWS_REGION}
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_KEY: ${AWS_SECRET_KEY}
